@@ -1,8 +1,14 @@
 {
   "name": "parcel-plugin-markdown",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
+  "description": "Parcel plugin for markdown.",
+  "author": "Geeku",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gongpeione/parcel-plugin-markdown"
+  },
   "dependencies": {
     "marked": "^0.3.7",
     "parcel-bundler": "^1.1.0"

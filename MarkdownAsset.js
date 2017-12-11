@@ -7,9 +7,13 @@ module.exports = class MarkdownAsset extends Asset {
         this.type = 'js';
     }
 
+    mdParser (content) {
+        return marked(content).trim().split('\n').map(line => `'${line.trim()}\\n'`).join('+');
+    }
+    
     generate() {
         return {
-            js: `module.exports=${marked(this.contents).trim().split('\n').map(line => `'${line.trim()}\\n'`).join('+')}`
+            js: `module.exports=${this.mdParser(this.contents)}`
         };
     }
 }
