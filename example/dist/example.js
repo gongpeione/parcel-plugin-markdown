@@ -66,7 +66,10 @@ require = (function (modules, cache, entry) {
   // Override the current require with this new one
   return newRequire;
 })({1:[function(require,module,exports) {
-module.exports='<h1 id="test">Test</h1>\n<h2 id="h2">H2</h2>\n<p><img src="/dist/5c417b847c64fc0b5d954ea1d2dc9a18.jpg" alt=""></p>\n'
+module.exports=`<h1 id="test">Test</h1>
+<h2 id="h2">H2</h2>
+<p><img src="/dist/5c417b847c64fc0b5d954ea1d2dc9a18.jpg" alt=""></p>
+`
 },{"./img.jpg":["5c417b847c64fc0b5d954ea1d2dc9a18.jpg",6]}],4:[function(require,module,exports) {
 "use strict";
 
@@ -95,7 +98,7 @@ function Module() {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent) {
-  var ws = new WebSocket('ws://localhost:59185/');
+  var ws = new WebSocket('ws://localhost:62749/');
   ws.onmessage = (e) => {
     var data = JSON.parse(e.data);
 

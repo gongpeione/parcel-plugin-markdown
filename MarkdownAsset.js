@@ -16,13 +16,13 @@ module.exports = class MarkdownAsset extends HTMLAsset {
     }
 
     mdParser(content) {
-        return `'${marked(content).trim().split('\n').map(line => `${line.trim()}\\n`).join('')}'`;
+        return marked(content);
     }
     
     generate() {
         let html = this.isAstDirty ? render(this.ast) : this.contents;
         return {
-            js: `module.exports=${html}`
+            js: `module.exports=\`${html}\``
         };
     }
 }
