@@ -2292,6 +2292,13 @@ posthtml-parser@^0.2.0:
     htmlparser2 "^3.8.3"
     isobject "^2.1.0"
 
+posthtml-parser@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/posthtml-parser/-/posthtml-parser-0.3.0.tgz#af16ea406769f0f33d0011c48fac1f55502fca29"
+  dependencies:
+    htmlparser2 "^3.8.3"
+    isobject "^2.1.0"
+
 posthtml-render@^1.0.5, posthtml-render@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/posthtml-render/-/posthtml-render-1.0.6.tgz#1b88b8e7860a8ebdfe2f2a1310a4642a55cf5bda"
