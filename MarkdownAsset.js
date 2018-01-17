@@ -20,7 +20,7 @@ module.exports = class MarkdownAsset extends HTMLAsset {
     }
     
     generate() {
-        let html = this.isAstDirty ? render(this.ast) : this.contents;
+        let html = render(this.ast);
         return {
             js: `module.exports=\`${html}\``
         };
