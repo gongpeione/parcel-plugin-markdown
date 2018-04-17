@@ -1,8 +1,5 @@
-const { Asset } = require('parcel-bundler');
 const HTMLAsset = require('parcel-bundler/src/assets/HTMLAsset');
 const marked = require('marked');
-const parse = require('posthtml-parser');
-const api = require('posthtml/lib/api');
 const render = require('posthtml-render');
 
 module.exports = class MarkdownAsset extends HTMLAsset {
