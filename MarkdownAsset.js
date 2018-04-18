@@ -1,6 +1,5 @@
 const HTMLAsset = require('parcel-bundler/src/assets/HTMLAsset');
 const marked = require('marked');
-const render = require('posthtml-render');
 
 module.exports = class MarkdownAsset extends HTMLAsset {
     constructor(name, pkg, options) {
@@ -9,17 +8,13 @@ module.exports = class MarkdownAsset extends HTMLAsset {
     }
 
     parse(code) {
-        return super.parse(this.mdParser(code));
-    }
-
-    mdParser(content) {
-        return marked(content);
+        this.contents = marked(code);
+        return super.parse(this.contents);
     }
     
     generate() {
-        let html = render(this.ast);
         return {
-            js: `module.exports=\`${html}\``
+            js: `module.exports=\`${super.generate()}\``
         };
     }
 }
