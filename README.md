@@ -13,10 +13,10 @@ document.body.innerHTML = md;
 
 ```json
 // package.json
-// If you want to pass options to markd
+// If you want to pass options to marked
 {
     "name": "ABC",
-    "markd": {
+    "marked": {
         "breaks": true
     }
 }
