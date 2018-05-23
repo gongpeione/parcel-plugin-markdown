@@ -5,11 +5,11 @@ module.exports = class MarkdownAsset extends HTMLAsset {
     constructor(name, pkg, options) {
         super(name, pkg, options);
         this.type = 'js';
-        this.options = pkg.markd || {}
+        this.markdOptions = pkg.markd || {}
     }
 
     parse(code) {
-        this.contents = marked(code, this.options);
+        this.contents = marked(code, this.markdOptions);
         return super.parse(this.contents);
     }
 
