@@ -2,13 +2,11 @@ const HTMLAsset = require('parcel-bundler/src/assets/HTMLAsset');
 const marked = require('marked');
 
 module.exports = class MarkdownAsset extends HTMLAsset {
-    constructor(name, pkg, options) {
-        super(name, pkg, options);
-        this.markedOptions = pkg.marked || {}
-    }
+  async parse (code) {
+    const pkg = this.getPackage();
+    this.markedOptions = pkg.marked || {};
+    this.contents = marked(code, this.markedOptions);
 
-    parse(code) {
-        this.contents = marked(code, this.markedOptions);
-        return super.parse(this.contents);
-    }
-}
+    return super.parse(this.contents);
+  }
+};
