@@ -3,7 +3,7 @@ const marked = require('marked');
 
 module.exports = class MarkdownAsset extends HTMLAsset {
   async parse (code) {
-    const pkg = this.getPackage();
+    const pkg = await this.getPackage();
     this.markedOptions = pkg.marked || {};
     this.contents = marked(code, this.markedOptions);
 
