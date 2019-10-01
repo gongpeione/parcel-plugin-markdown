@@ -10,7 +10,7 @@
     "url": "https://github.com/gongpeione/parcel-plugin-markdown"
   },
   "dependencies": {
-    "marked": "^0.4.0",
+    "marked": "^0.7.0",
     "parcel-bundler": "^1.8.1"
   },
   "devDependencies": {
